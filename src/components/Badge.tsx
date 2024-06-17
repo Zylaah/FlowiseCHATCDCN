@@ -6,6 +6,7 @@ type Props = {
   botContainer: HTMLDivElement | undefined;
   poweredByTextColor?: string;
   badgeBackgroundColor?: string;
+  borderRadius?: string;
 };
 
 const defaultTextColor = '#303235';
@@ -46,20 +47,11 @@ export const Badge = (props: Props) => {
           style={{
             color: props.footer?.textColor ?? props.poweredByTextColor ?? defaultTextColor,
             'background-color': props.badgeBackgroundColor ?? '#ffffff',
+            'border-radius': props.borderRadius ?? '6px',
           }}
         >
           {props.footer?.text ?? 'Powered by'}
-          <a
-            ref={liteBadge}
-            href={props.footer?.companyLink ?? 'https://flowiseai.com'}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="lite-badge"
-            id="lite-badge"
-            style={{ 'font-weight': 'bold', color: props.footer?.textColor ?? props.poweredByTextColor ?? defaultTextColor }}
-          >
-            <span>&nbsp;{props.footer?.company ?? 'Flowise'}</span>
-          </a>
+          <span style={{ 'font-weight': 'bold' }}>&nbsp;{props.footer?.company ?? 'CNToolkit'}</span>
         </span>
       </Show>
       <Show when={props.footer?.showFooter === false}>

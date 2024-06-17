@@ -77,6 +77,7 @@ export type BotProps = {
   feedback?: FeedbackTheme;
   poweredByTextColor?: string;
   badgeBackgroundColor?: string;
+  borderRadius?: string;
   bubbleBackgroundColor?: string;
   bubbleTextColor?: string;
   showTitle?: boolean;
@@ -1065,6 +1066,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             footer={props.footer}
             badgeBackgroundColor={props.badgeBackgroundColor}
             poweredByTextColor={props.poweredByTextColor}
+            borderRadius={props.borderRadius}
             botContainer={botContainer}
           />
         </div>
